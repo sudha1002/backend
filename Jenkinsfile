@@ -34,6 +34,17 @@ pipeline {
                 
             }
         }
+        stage('docker build') {
+            steps {
+                script{
+                    sh """
+                       docker build -t backend:v1.0.0 .
+                    """   
+
+                }
+                
+            }
+        }
         
     }
     
