@@ -50,7 +50,7 @@ pipeline {
               }
             }
         } */
-        /* stage('Docker Build') {
+        stage('Docker Build') {
             steps {
                script{
                 withAWS(region: 'us-east-1', credentials: 'aws-creds') {
@@ -65,7 +65,7 @@ pipeline {
                  
                }
             }
-        } */
+        }
         /* stage('Trigger Deploy'){
             when { 
                 expression { params.deploy }
