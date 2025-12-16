@@ -10,9 +10,9 @@ pipeline {
         disableConcurrentBuilds()
         timeout(time: 30, unit: 'MINUTES')
     }
-    /* parameters{
+    parameters{
         booleanParam(name: 'deploy', defaultValue: true, description: 'Toggle this value')
-    } */
+    }
     stages {
         stage('Read Version') {
             steps {
@@ -67,14 +67,14 @@ pipeline {
                 
             }
         }
-        /* stage('Trigger Deploy'){
+        stage('Trigger Deploy'){
             when { 
                 expression { params.deploy }
             }
             steps{
                 build job: 'backend-cd', parameters: [string(name: 'version', value: "${appVersion}")], wait: true
             }
-        } */
+        }
     }
     post { 
         always { 
